@@ -2,10 +2,17 @@ const websocketService = require ('../services/websocketService');
 
 module.exports = [
     {
-        eventName: "Example_Event__e",
+        eventName: "AccountChangeEvent",
         eventFxn: (message) => {
-            console.log('This is your message: ' + JSON.stringify(message));
-            websocketService.broadcast(JSON.stringify(message));
+            console.log('message: ' + JSON.stringify(message));
+            // websocketService.broadcast(JSON.stringify(message));
+        }
+    },
+    {
+        eventName: "Async_Call__e",
+        eventFxn: (message) => {
+            console.log('message: ' + JSON.stringify(message));
+            // websocketService.broadcast(JSON.stringify(message));
         }
     }
 ];
